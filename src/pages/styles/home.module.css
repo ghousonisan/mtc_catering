@@ -1,0 +1,517 @@
+/* ---------- About ---------- */
+.aboutInner {
+  gap: 48px;
+}
+
+.aboutTitle {
+  max-width: 820px;
+}
+
+.aboutHeader .eyebrowSemi {
+  font-weight: 600;
+}
+
+.aboutText {
+  max-width: 1170px;
+}
+
+/* ---------- Programs ---------- */
+.programCard {
+  position: relative;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+}
+
+.programCard > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.5s ease;
+}
+
+.programCard:hover > img {
+  transform: scale(1.04);
+}
+
+.programCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 19.7%, #000 100%);
+}
+
+.programTag {
+  color: var(--gold);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.programTitle {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.programCard a {
+  align-self: flex-start;
+}
+
+/* ---------- Hospitality domains ---------- */
+.domainSubtitle {
+  max-width: 800px;
+}
+
+.domainCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--beige);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.iconCircle {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.iconCircle img {
+  width: 28px;
+  height: 28px;
+}
+
+.domainTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.domainText {
+  font-size: 16px;
+}
+
+/* ---------- Campus life ---------- */
+.campusHeader {
+  max-width: 680px;
+}
+
+/* ---------- Career destinations ---------- */
+.careerHeader {
+  gap: 12px;
+}
+
+.careerTitle {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.careerSubtitle {
+  max-width: 860px;
+}
+
+.careerGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.careerCard {
+  position: relative;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.careerCard > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.careerCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%, #000 100%);
+}
+
+.careerName {
+  color: #f7f3ea;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.careerText {
+  margin-top: 3px;
+  color: rgba(247, 243, 234, 0.75);
+  font-size: 12px;
+}
+
+.careerArrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.careerArrow img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Success stories ---------- */
+.storiesSubtitle {
+  max-width: 960px;
+}
+
+.slider {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 10px;
+  margin: -10px;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.storyCard {
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+}
+
+.storyPerson {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.storyPerson img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.storyName {
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.storyQuote {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.sliderNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sliderBtn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--gold);
+  transition: var(--transition);
+}
+
+.sliderBtn img {
+  width: 24px;
+  height: 24px;
+}
+
+.sliderBtnPrev img {
+  transform: scaleX(-1);
+}
+
+/* Default: outline + gold arrow. Hover/focus: gold fill + white arrow. */
+.sliderBtn .iconHover {
+  display: none;
+}
+
+.sliderBtn:hover:not(:disabled),
+.sliderBtn:focus-visible {
+  background: var(--gold);
+}
+
+.sliderBtn:hover:not(:disabled) .iconIdle,
+.sliderBtn:focus-visible .iconIdle {
+  display: none;
+}
+
+.sliderBtn:hover:not(:disabled) .iconHover,
+.sliderBtn:focus-visible .iconHover {
+  display: block;
+}
+
+.sliderBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ---------- Gallery strip ---------- */
+.galleryInner {
+  gap: 56px;
+}
+
+.galleryWrap {
+  position: relative;
+  width: 100%;
+}
+
+/* Edge fade, as in Figma: a solid white 140px block blurred 20px,
+   centred on each edge of the grid (70px outside, 70px over the images). */
+.galleryWrap::before,
+.galleryWrap::after {
+  content: '';
+  position: absolute;
+  top: -46px;
+  bottom: -46px;
+  width: var(--gallery-fade, 140px);
+  z-index: 1;
+  background: #fff;
+  filter: blur(var(--gallery-fade-blur, 20px));
+  pointer-events: none;
+}
+
+.galleryWrap::before {
+  left: calc(var(--gallery-fade, 140px) / -2);
+}
+
+.galleryWrap::after {
+  right: calc(var(--gallery-fade, 140px) / -2);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.galleryGrid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 56px;
+}
+
+.faqIntro {
+  flex: 0 1 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faqList {
+  flex: 0 1 704px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faqItem {
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+}
+
+.faqQuestion img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.faqOpen .faqQuestion img {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faqOpen .faqAnswer {
+  grid-template-rows: 1fr;
+}
+
+.faqAnswer > div {
+  overflow: hidden;
+}
+
+.faqAnswer p {
+  margin: 0 24px;
+  padding: 17px 0 20px;
+  border-top: 1px solid rgba(26, 26, 26, 0.05);
+  color: rgba(26, 26, 26, 0.7);
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .careerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .storyCard {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+  .galleryGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .galleryWrap {
+    --gallery-fade: 90px;
+    --gallery-fade-blur: 14px;
+  }
+  .faq {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .faqIntro,
+  .faqList {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .aboutInner {
+    gap: 32px;
+  }
+  .programCard {
+    height: 420px;
+  }
+  .programTitle {
+    font-size: 20px;
+  }
+  .careerTitle {
+    font-size: 26px;
+  }
+  .careerGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .careerCard {
+    height: 280px;
+  }
+  .storyCard {
+    flex-basis: 100%;
+  }
+  /* Mobile (Figma 375 frame): a centred 5-column strip of 150×110 tiles,
+     clipped to the screen, with 114px blurred white blocks on both edges */
+  .galleryInner {
+    gap: 10px;
+  }
+  .galleryWrap {
+    display: block;
+    overflow: hidden;
+    padding: 28px 0;
+    --gallery-fade: 114px;
+    --gallery-fade-blur: 20px;
+  }
+  .galleryGrid {
+    width: 798px;
+    grid-template-columns: repeat(5, 150px);
+    gap: 12px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .galleryGrid img {
+    height: 110px;
+    aspect-ratio: auto;
+  }
+  .faqQuestion {
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .faqAnswer p {
+    margin: 0 20px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

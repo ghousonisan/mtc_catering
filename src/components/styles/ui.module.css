@@ -1,0 +1,291 @@
+/* ---------- Layout ---------- */
+.section {
+  padding: 80px var(--section-px);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--content-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.beige {
+  background: var(--beige);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.primary {
+  background: var(--gold);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--gold-hover);
+}
+
+.outline {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.outline:hover {
+  background: rgba(212, 160, 23, 0.1);
+}
+
+.outlineWhite {
+  border-color: #fff;
+  color: #fff;
+}
+
+.outlineWhite:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Section header ---------- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* ---------- Image card (photo + bottom gradient + caption) ---------- */
+.imageCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  color: #fff;
+  isolation: isolate;
+}
+
+.imageCard>img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.imageCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) var(--fade-from, 60%), #000 var(--fade-to, 100%));
+}
+
+.imageCardTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.imageCardText {
+  font-size: 16px;
+}
+
+/* ---------- Card grids ---------- */
+.grid3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.grid2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+/* Wrapping, centered rows of pills/cards (last row stays centered as in the design) */
+.wrapCenter {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.wrapCenter>.fixed3 {
+  flex: 0 1 calc((100% - 80px) / 3);
+}
+
+.wrapCenter>.fixed2 {
+  flex: 0 1 calc((100% - 40px) / 2);
+}
+
+/* ---------- Pills & small cards ---------- */
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border-radius: 50px;
+  background: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pillBordered {
+  border: 2px solid var(--border);
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--card-gray);
+}
+
+.infoCardTitle {
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.infoCardText {
+  font-size: 16px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--card-gray);
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .grid2,
+  .wrapCenter {
+    gap: 24px;
+  }
+
+  .wrapCenter>.fixed3 {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .wrapCenter>.fixed2 {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .inner {
+    gap: 28px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .eyebrow,
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .grid3,
+  .grid2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .wrapCenter {
+    gap: 12px;
+  }
+
+  .wrapCenter>.fixed3,
+  .wrapCenter>.fixed2 {
+    flex-basis: 100%;
+  }
+
+  .pill {
+    padding: 14px 24px;
+    font-size: 16px;
+    gap: 12px;
+  }
+
+  .tag,
+  .infoCardTitle,
+  .imageCardTitle {
+    font-size: 18px;
+  }
+
+  .tag {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .infoCardText {
+    font-size: 14px;
+  }
+}

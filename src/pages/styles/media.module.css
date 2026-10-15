@@ -1,0 +1,287 @@
+/* ---------- Events list ---------- */
+.events {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.eventRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.eventImage {
+  flex: 0 0 520px;
+  min-width: 0;
+  width: 520px;
+  height: 480px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.eventBody {
+  flex: 0 1 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.eventText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.eventMeta {
+  color: var(--gold);
+}
+
+.eventTitle {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.download {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--gold);
+  transition: var(--transition);
+}
+
+.download:hover {
+  background: var(--gold-hover);
+}
+
+.download img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Album grid ---------- */
+.albums {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.album {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.album > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.4s ease;
+}
+
+.album:hover > img {
+  transform: scale(1.05);
+}
+
+.album::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #000 100%);
+}
+
+.albumTitle {
+  max-width: 238px;
+}
+
+.albumCount {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.albumCount img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Album detail ---------- */
+.albumHeading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.albumHeading span {
+  color: var(--gold);
+}
+
+.photo {
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.04);
+}
+
+.backLink {
+  align-self: flex-start;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 72px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.lightbox > img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.lightboxBtn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--gold);
+}
+
+.lightboxBtn img {
+  width: 24px;
+  height: 24px;
+}
+
+.lightboxClose {
+  top: 16px;
+  right: 16px;
+  background: #fff;
+}
+
+.lightboxPrev,
+.lightboxNext {
+  top: calc(50% - 22px);
+}
+
+.lightboxPrev {
+  left: 16px;
+}
+
+.lightboxPrev img {
+  transform: scaleX(-1);
+}
+
+.lightboxNext {
+  right: 16px;
+}
+
+@media (max-width: 1100px) {
+  .eventRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .eventImage {
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 13 / 12;
+    max-width: 520px;
+  }
+  .eventBody {
+    flex-basis: auto;
+    gap: 28px;
+  }
+  .albums {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .events {
+    gap: 32px;
+  }
+  .event {
+    padding-bottom: 32px;
+    gap: 24px;
+  }
+  .eventText {
+    font-size: 16px;
+    gap: 12px;
+  }
+  .eventTitle {
+    font-size: 24px;
+  }
+  .albums {
+    grid-template-columns: 1fr;
+  }
+  .albumHeading {
+    font-size: 24px;
+  }
+  .photo {
+    height: 220px;
+  }
+  .lightbox {
+    padding: 72px 12px;
+  }
+  .lightboxPrev,
+  .lightboxNext {
+    top: auto;
+    bottom: 16px;
+  }
+}

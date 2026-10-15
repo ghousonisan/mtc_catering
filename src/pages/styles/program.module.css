@@ -1,0 +1,49 @@
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.iconCircle img {
+  width: 20px;
+  height: 20px;
+}
+
+.learnPill {
+  padding: 10px 10px;
+}
+
+.careerPills {
+  max-width: 920px;
+}
+
+.autoTag {
+  flex: 0 0 auto;
+}
+
+.higherTag {
+  flex: 0 1 480px;
+}
+
+.benefitsSubtitle {
+  max-width: 1200px;
+}
+
+@media (max-width: 700px) {
+  .learnPill {
+    padding: 14px 20px;
+  }
+
+  .autoTag {
+    flex: 1 1 auto;
+  }
+
+  .higherTag {
+    flex-basis: 100%;
+  }
+}
